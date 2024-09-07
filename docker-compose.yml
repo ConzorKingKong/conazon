@@ -1,0 +1,80 @@
+version: '3.9'
+
+services:
+  front-end:
+    build: 
+      context: ./conazon-front-end/
+      dockerfile: Dockerfile
+    ports:
+      - 3000
+    container_name: front-end
+    env_file:
+      - .env
+  users-and-auth:
+    build: 
+      context: ./conazon-users-and-auth/
+      dockerfile: Dockerfile
+    container_name: users-and-auth
+    env_file:
+      - .env.backend
+    ports:
+      - 8080
+    links:
+     - postgres
+  products:
+    build: 
+      context: ./conazon-products/
+      dockerfile: Dockerfile
+    container_name: products
+    env_file:
+      - .env.backend
+    ports:
+      - 8081
+    links:
+     - postgres
+  cart:
+    build: 
+      context: ./conazon-cart/
+      dockerfile: Dockerfile
+    container_name: cart
+    env_file:
+      - .env.backend
+    ports:
+      - 8082
+    links:
+     - postgres
+  checkout:
+    build: 
+      context: ./conazon-checkout/
+      dockerfile: Dockerfile
+    container_name: checkout
+    env_file:
+      - .env.backend
+    ports:
+      - 8083
+    links:
+     - postgres
+  nginx:
+    image: nginx:stable-alpine3.19
+    container_name: nginx
+    ports: 
+      - 80:80
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - users-and-auth
+      - products
+      - cart
+      - checkout
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    ports:
+      - 5432
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=conazon
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

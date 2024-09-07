@@ -1,0 +1,15 @@
+[submodule "conazon-front-end"]
+	path = conazon-front-end
+	url = git@github.com:ConzorKingKong/conazon-front-end.git
+[submodule "conazon-users-and-auth"]
+	path = conazon-users-and-auth
+	url = git@github.com:ConzorKingKong/conazon-users-and-auth.git
+[submodule "conazon-checkout"]
+	path = conazon-checkout
+	url = git@github.com:ConzorKingKong/conazon-checkout.git
+[submodule "conazon-cart"]
+	path = conazon-cart
+	url = git@github.com:ConzorKingKong/conazon-cart.git
+[submodule "conazon-products"]
+	path = conazon-products
+	url = git@github.com:ConzorKingKong/conazon-products.git
