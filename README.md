@@ -18,6 +18,7 @@ CLIENTSECRET
 REDIRECTURL
 DATABASEURL='host=postgres port=5432 user=postgres dbname=conazon sslmode=disable'
 SECURECOOKIE
+EMAILPASSWORD
 ```
 
 Run `docker-compose up` to run the project. All other `conazon` back-end endpoints must be running for the project to work
