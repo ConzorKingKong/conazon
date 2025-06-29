@@ -13,3 +13,6 @@
 [submodule "conazon-products"]
 	path = conazon-products
 	url = git@github.com:ConzorKingKong/conazon-products.git
+[submodule "conazon-email-service"]
+	path = conazon-email-service
+	url = https://github.com/ConzorKingKong/conazon-email-service
