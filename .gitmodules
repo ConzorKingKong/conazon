@@ -1,18 +1,24 @@
 [submodule "conazon-front-end"]
 	path = conazon-front-end
 	url = git@github.com:ConzorKingKong/conazon-front-end.git
+	branch = main
 [submodule "conazon-users-and-auth"]
 	path = conazon-users-and-auth
 	url = git@github.com:ConzorKingKong/conazon-users-and-auth.git
+	branch = main
 [submodule "conazon-checkout"]
 	path = conazon-checkout
 	url = git@github.com:ConzorKingKong/conazon-checkout.git
+	branch = main
 [submodule "conazon-cart"]
 	path = conazon-cart
 	url = git@github.com:ConzorKingKong/conazon-cart.git
+	branch = main
 [submodule "conazon-products"]
 	path = conazon-products
 	url = git@github.com:ConzorKingKong/conazon-products.git
+	branch = main
 [submodule "conazon-email-service"]
 	path = conazon-email-service
 	url = https://github.com/ConzorKingKong/conazon-email-service
+	branch = main
