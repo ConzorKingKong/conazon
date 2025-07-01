@@ -18,6 +18,8 @@ CLIENTSECRET - Secret for Google Oauth REQUIRED
 REDIRECTURL - Redirect url for Google Oauth REQUIRED
 EMAILPASSWORD - App password (not regular password) to gmail account — https://support.google.com/accounts/answer/185833?visit_id=638613322705524102-924909150&p=InvalidSecondFactor&rd=1 REQUIRED
 DATABASEURL='host=postgres port=5432 user=postgres dbname=conazon sslmode=disable'
+PROTOCOL - http or https in prod
+HOSTNAME - hostname you're project will run on
 SECURECOOKIE - If true, enables secure on all cookies (only use cookie on https). Otherwise, default value of `false` is used. MUST BE TRUE IN PROD
 RABBITMQURL - URL to RabbitMQ instance. Defaults to a docker container if not given
 ```
